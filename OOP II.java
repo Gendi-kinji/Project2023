@@ -58,3 +58,28 @@ public class Parent extends JFrame{
     });
 
 }}
+public abstract class Notification {
+    public float Administration;
+    public  float Remedial;
+    public float Medical;
+    public float Damages;
+    public float FeeBal;
+
+    public abstract float getFeeBal();
+}
+import java.util.Scanner;
+
+public class Calculator extends Notification{
+    Scanner scan=new Scanner(System.in);
+
+    float Administration= scan.nextInt();
+    float Medical= scan.nextInt();
+    float Remedial= scan.nextInt();
+    float Damages=scan.nextFloat();
+    float FeeBal=Damages+Remedial+Medical+Administration;
+    @Override
+    public float getFeeBal() {
+        return FeeBal;
+    }
+}
+
