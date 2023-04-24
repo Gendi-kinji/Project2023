@@ -138,5 +138,55 @@ public class Fees extends Calculator{
     }
 
 }
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class User extends JFrame{
+    private JLabel lblName;
+    private JTextField txtName;
+    private JLabel lblNumber;
+    private JTextField txtNumber;
+    private JLabel lblStatus;
+    private JRadioButton radioParent;
+    private JRadioButton radioAdministration;
+    private JButton btnSubmit;
+
+    public User(){
+        super("Sign-in");
+        setLayout(new CardLayout());
+        lblName=new JLabel("Name");
+        txtName=new JTextField(45);
+        lblNumber=new JLabel("Phone number");
+        txtNumber=new JTextField(45);
+        lblStatus=new JLabel("Are you a:");
+        radioParent=new JRadioButton("Parent/Guardian");
+        radioAdministration=new JRadioButton("Administration");
+        btnSubmit=new JButton("Submit");
+
+        add(lblName);
+        add(txtName);
+        add(lblNumber);
+        add(txtNumber);
+        add(lblStatus);
+        add(radioParent);
+        add(radioAdministration);
+        add(btnSubmit);
+
+        btnSubmit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                 if(radioParent.isSelected()){
+                     Parent par=new Parent();
+                 } else if (radioAdministration.isSelected()) {
+                     
+
+                 }
+            }
+        });
+    }
+
+}
 
 
