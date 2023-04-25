@@ -188,5 +188,69 @@ public class User extends JFrame{
     }
 
 }
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Administration extends Calculator{
+    private JFrame fram;
+    private JLabel lblAdd;
+    private JTextField txtAdd;
+    private JLabel lblMed;
+    private JTextField txtMed;
+    private JLabel lblDamage;
+    private JTextField txtDamage;
+    private JLabel lblRem;
+    private JTextField txtRem;
+    private JLabel lblTotal;
+    private JTextField txtTotal;
+    private JButton btnSubmit;
+    public Administration(){
+        fram=new JFrame("Administration");
+        lblAdd=new JLabel("Administration:");
+        txtAdd=new JTextField(30);
+        lblMed=new JLabel("Medical:");
+        txtMed=new JTextField(30);
+        lblDamage=new JLabel("Damages:");
+        txtDamage=new JTextField(30);
+        lblRem=new JLabel("Remedial:");
+        txtRem=new JTextField(30);
+        lblTotal=new JLabel("Total:");
+        txtTotal=new JTextField(30);
+        btnSubmit=new JButton("Submit");
+        fram.setLayout(new FlowLayout());
+        fram.add(lblAdd);
+        fram.add(txtAdd);
+        fram.add(lblMed);
+        fram.add(txtMed);
+        fram.add(lblDamage);
+        fram.add(txtDamage);
+        fram.add(lblRem);
+        fram.add(txtRem);
+        fram.add(lblTotal);
+        fram.add(txtTotal);
+        fram.add(btnSubmit);
+        Administration=Float.parseFloat(txtAdd.getText());
+        Medical=Float.parseFloat(txtMed.getText());
+        Damages=Float.parseFloat(txtDamage.getText());
+        Remedial=Float.parseFloat(txtRem.getText());
+        FeeBal=Float.parseFloat(txtTotal.getText());
+        btnSubmit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(FeeBal>=0){
+                    Fees fee=new Fees();
+                }
+                else{
+                    User us=new User();
+                }
+            }
+        });
+
+
+    }
+
+}
 
 
